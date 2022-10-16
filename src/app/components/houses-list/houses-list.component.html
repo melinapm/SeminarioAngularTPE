@@ -20,7 +20,7 @@
         <td> {{inmueble.inmobiliaria}} </td>
         <td> {{inmueble.operacion}} </td>
         <td> 
-          <button *ngIf="inmueble.disponible; else noDisponible" type="button" class="btn btn-success">Visitar</button> 
+          <button *ngIf="inmueble.disponible; else noDisponible" (click)="openModal()" type="button" class="btn btn-success">Visitar</button> 
           <ng-template #noDisponible> 
             <button type="button" class="btn btn-info">Contactar</button> 
           </ng-template>
