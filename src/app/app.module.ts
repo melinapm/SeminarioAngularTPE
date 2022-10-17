@@ -9,7 +9,6 @@ import { VisitListComponent } from './components/visit-list/visit-list.component
 import { HouseCalendarComponent } from './components/house-calendar/house-calendar.component';
 import { HomeComponent } from './components/home/home.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { ModalCalendarComponent } from './components/modal-calendar/modal-calendar.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +17,7 @@ import { ModalCalendarComponent } from './components/modal-calendar/modal-calend
     VisitListComponent,
     HouseCalendarComponent,
     HomeComponent,
-    ContactComponent,
-    ModalCalendarComponent
+    ContactComponent
   ],
   imports: [
     BrowserModule,
