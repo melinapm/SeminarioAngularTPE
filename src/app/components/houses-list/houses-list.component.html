@@ -15,10 +15,10 @@
       <tr *ngFor="let inmueble of inmuebles">
         <th><img [src]="inmueble.imagen" [alt]="inmueble.direccion" class="img-thumbnail"></th>
         <th> {{inmueble.direccion}} </th>
+        <td> {{inmueble.operacion}} </td>
         <td> {{inmueble.valor}} </td>
         <td> {{inmueble.ambientes}} </td>        
         <td> {{inmueble.inmobiliaria}} </td>
-        <td> {{inmueble.operacion}} </td>
         <td> 
           <button *ngIf="inmueble.disponible; else noDisponible" (click)=displayDays() type="button" class="btn btn-success">Visitar</button> 
           <div *ngFor="let dia of inmueble.dias" [hidden]="isShowDiv">
