@@ -20,7 +20,10 @@
         <td> {{inmueble.inmobiliaria}} </td>
         <td> {{inmueble.operacion}} </td>
         <td> 
-          <button *ngIf="inmueble.disponible; else noDisponible" (click)="openModal()" type="button" class="btn btn-success">Visitar</button> 
+          <button *ngIf="inmueble.disponible; else noDisponible" (click)=displayDays() type="button" class="btn btn-success">Visitar</button> 
+          <div *ngFor="let dia of inmueble.dias" [hidden]="isShowDiv">
+            <button *ngIf="inmueble.disponible" (click)=reservarDiaVisita(inmueble,dia) type="button" class="btn btn-light"> {{dia}} </button>
+          </div>  
           <ng-template #noDisponible> 
             <button type="button" class="btn btn-info">Contactar</button> 
           </ng-template>

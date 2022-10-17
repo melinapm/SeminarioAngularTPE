@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InfoVisita } from 'src/app/InfoVisita';
+import { VisitListService } from 'src/app/services/visit-list/visit-list.service';
 
 @Component({
   selector: 'app-visit-list',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VisitListComponent implements OnInit {
 
-  constructor() { }
+  infoVisita: InfoVisita[] = [];
+
+  constructor(private visitListService: VisitListService) { }
 
   ngOnInit(): void {
+      this.visitListService.calendar.subscribe(data => {
+      this.infoVisita = data;
+      });
+  }
+
+  borrarVisita(info:InfoVisita){
+      this.visitListService.borrarVisita(info);
   }
 
 }
