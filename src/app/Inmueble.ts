@@ -6,5 +6,6 @@ export interface Inmueble {
     ambientes: number;
     disponible: boolean;
     imagen: string;
+    dias: string[];
   } 
   
